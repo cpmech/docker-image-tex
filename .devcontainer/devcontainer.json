@@ -1,0 +1,8 @@
+{
+  "name": "tex-docker",
+  "image": "cpmech/tex-docker",
+  "forwardPorts": [
+    9000
+  ],
+  "remoteUser": "vscode"
+}
