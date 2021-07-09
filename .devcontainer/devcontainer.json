@@ -1,6 +1,6 @@
 {
-  "name": "tex-docker",
-  "image": "cpmech/tex-docker",
+  "name": "tex",
+  "image": "cpmech/tex",
   "forwardPorts": [
     9000
   ],
