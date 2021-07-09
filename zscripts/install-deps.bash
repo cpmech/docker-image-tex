@@ -16,7 +16,7 @@ MPI=${2:-"OFF"}
 sudo apt-get update -y && \
 sudo apt-get install -y --no-install-recommends \
     git \
-    texlive-fonts-extra
-    texlive-latex-extra
-    texlive-pstricks
+    texlive-fonts-extra \
+    texlive-latex-extra \
+    texlive-pstricks \
     texlive-science
