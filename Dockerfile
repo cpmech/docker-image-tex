@@ -14,7 +14,7 @@ COPY . /tmp/tex-docker
 WORKDIR /tmp/tex-docker
 
 # install dependencies
-RUN bash zscripts/install-deps.bash ${INTEL} ${MPI} \
+RUN bash zscripts/install-deps.bash \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # configure image for remote development
