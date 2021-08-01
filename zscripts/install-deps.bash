@@ -2,6 +2,7 @@
 
 set -e
 
+# set versions
 VER_PANDOC=2.14.1
 VER_PANDOC_CB=v0.3.12.0b
 VER_JULIA_MAJOR=1.6
@@ -14,6 +15,7 @@ sudo () {
 }
 
 # install essential tools
+echo "INSTALL ESSENTIAL TOOLS"
 sudo apt-get update -y && \
 sudo apt-get install -y --no-install-recommends \
     git \
@@ -29,11 +31,13 @@ sudo apt-get install -y --no-install-recommends \
     xz-utils
 
 # install pandoc
+echo "INSTALL PANDOC"
 curl -L https://github.com/jgm/pandoc/releases/download/$VER_PANDOC/pandoc-$VER_PANDOC-1-amd64.deb -o pandoc.deb
 sudo dpkg -i pandoc.deb
 rm pandoc.deb
 
 # install pandoc-crossref
+echo "INSTALL PANDOC-CROSSREF"
 curl -L https://github.com/lierdakil/pandoc-crossref/releases/download/$VER_PANDOC_CB/pandoc-crossref-Linux.tar.xz -o pandoc-crossref.tar.xz
 tar -xf pandoc-crossref.tar.xz
 sudo mv pandoc-crossref /usr/bin/
@@ -41,12 +45,14 @@ rm pandoc-crossref.tar.xz
 rm pandoc-crossref.1
 
 # install codebraid
+echo "INSTALL CODEBRAID"
 sudo pip3 install codebraid
 
 # install julia
+echo "INSTALL JULIa"
 curl -L https://julialang-s3.julialang.org/bin/linux/x64/$VER_JULIA_MAJOR/julia-$VER_JULIA-linux-x86_64.tar.gz -o julia.tar.gz
 tar -xzf julia.tar.gz
-cd $VER_JULIA
+cd julia-$VER_JULIA
 sudo mv bin/julia /usr/bin/
 sudo mv etc/julia /etc/
 sudo mv include/julia /usr/include/
@@ -54,5 +60,5 @@ sudo mv lib/* /usr/lib/
 sudo mv libexec/7z /usr/bin/
 sudo rsync -r share/ /usr/share
 cd ..
-rm -rf $VER_JULIA
+rm -rf julia-$VER_JULIA
 rm julia.tar.gz

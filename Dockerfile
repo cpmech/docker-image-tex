@@ -20,5 +20,5 @@ RUN bash zscripts/install-deps.bash \
 # configure image for remote development
 RUN bash zscripts/common-debian.sh
 
-# compile example
+# compile examples
 # RUN bash all.bash
