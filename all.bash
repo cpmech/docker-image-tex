@@ -1,4 +1,7 @@
 #!/bin/bash
 
-cd article
-pdflatex main.tex
+cd article-md
+bash ./all.bash
+
+cd article-tex
+bash ./all.bash

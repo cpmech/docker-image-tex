@@ -21,4 +21,4 @@ RUN bash zscripts/install-deps.bash \
 RUN bash zscripts/common-debian.sh
 
 # compile example
-RUN bash all.bash
+# RUN bash all.bash
